@@ -88,7 +88,7 @@ def winner(board):
     if board[0][2] == board[1][1] == board[2][0] and board[0][2] is not EMPTY:
         return board[0][2]
     return None #otherwise keep going
-
+ 
 
 def terminal(board):
     """
