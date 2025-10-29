@@ -26,12 +26,13 @@ knowledge1 = And(
     Not(And(AKnight, AKnave)),
      
     Or(BKnight, BKnave),
-    Not(And(BKnight, BKnave),
+    Not(And(BKnight, BKnave)),
     
     And(AKnave, BKnave),
     
     Implication(AKnight, And(AKnave, BKnave)),
     Implication(AKnave, Not(And(AKnave, BKnave)))
+    )
 
     
     # TODO
@@ -49,18 +50,16 @@ knowledge2 = And(
     
         Implication(AKnight,
                      Or(And(AKnight, BKnight),
-                        And(AKnave, BKnave)))
+                        And(AKnave, BKnave))),
 
         Implication(AKnave,
-                     Not(Or(And(AKnight, BKnight)
-                        And(AKnave, BKnave))))
-        
+                     Not(Or(And(AKnight, BKnight),
+                        And(AKnave, BKnave)))),
         Implication(BKnight,
                      Or(And(AKnight, BKnave),
-                        And(AKnave, BKnight)))
-
+                        And(AKnave, BKnight))),
         Implication(BKnave,
-                     NotOr(And(AKnight, BKnave),
+                     Not(Or(And(AKnight, BKnave),
                         And(AKnave, BKnight)))
              )
     # TODO
@@ -85,8 +84,8 @@ knowledge3 = And(
                 Implication(AKnight, AKnave)),
     Implication(BKnight, CKnave),
     Implication(BKnave, Not(CKnave)),
-    Implication(CKnight, AKnight)
-    Implications(CKnave, Not(AKnight))
+    Implication(CKnight, AKnight),
+    Implication(CKnave, Not(AKnight))
                 
        ))
     # TODO
