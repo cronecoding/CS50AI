@@ -1,0 +1,3 @@
+First task was to find which layers to use. Because these are images, Conv2D and MaxPool were suggested to create a CNN. Running the program without them led to terrible accuracy.
+Then finding a balance in the filters. 16/32 went very fast but only got up to 85% test accuracy. 32/64 hit 95% for not much more time. 64/128 took forever with similar (95%) accuracy.
+Starting with the standard 0.5 dropout, but changed it to 0.3 because there was higher accuracy (97) and no signs of overfitting (training accuracies incrementally increased consistantly)
